@@ -1,0 +1,16 @@
+#!/bin/bash 
+
+#copyright 2018 Zhuyu Li zhuyuli@bu.edu
+#bash script shell file: list the n latest files
+
+let "outputFileNum = $1 -1"
+
+totalFiles=($(ls -t))	
+ 
+for num in $(seq 0 $outputFileNum)
+do 
+    echo ${totalFiles[$num]}	
+done
+
+
+ 

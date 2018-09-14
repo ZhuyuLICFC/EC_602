@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+
+#copyright 2018 Zhuyu Li zhuyuli@bu.edu
+#python script shell file: list the n oldest files
+
+import os
+import sys
+
+file_path = os.getcwd()
+
+file_list = os.listdir(file_path)
+file_num = len(file_list)
+file_data_link = [[0] * 2 for i in range(file_num)]
+
+for i in range(file_num):
+    file_data_link[i][0] = file_list[i]
+    file_data_link[i][1] = os.path.getmtime(file_path + "/" + file_list[i])
+    
+sorted_link_list = sorted(file_data_link, key=lambda x:x[1])
+
+output_num = int(sys.argv[1])
+for i in range(output_num):
+    print(sorted_link_list[i][0])
+    
+    
