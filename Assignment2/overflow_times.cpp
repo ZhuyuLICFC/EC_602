@@ -36,7 +36,7 @@ int main()
   end_clock = clock();
 
   // calculate others
-  int16micro = static_cast<double>(end_clock - start_clock) * pow(10,-3);
+  int16micro = static_cast<double>(end_clock - start_clock) * pow(10,3);
   int8nano = int16micro * (pow(2,8) / pow(2,16)) * 1000;
   int32sec = int16micro * (pow(2,32) / pow(2,16)) * pow(10,-6);
   int64year = int16micro * (pow(2,64) / pow(2,16)) * pow(10,-6) / secInYear;
